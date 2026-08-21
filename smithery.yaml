@@ -1,0 +1,34 @@
+# Smithery configuration for GCP Billing
+# Schema: https://smithery.ai/docs/build/project-config
+# Remote HTTP MCP — server hosted at https://api.mcp.ai/p_gcp_billing
+
+name: gcp_billing-mcp
+displayName: "GCP Billing"
+description: >
+  Google Cloud Billing BigQuery export reporting through a user-connected service account.
+
+version: 0.1.0
+license: MIT
+homepage: https://github.com/mcp-dir/gcp_billing-mcp
+repository: https://github.com/mcp-dir/gcp_billing-mcp
+
+tags:
+  - gcp_billing
+  - brazil
+  - med
+  - horizontal
+  - read-only
+
+# Remote HTTP MCP — sem startCommand local (servidor já hospedado)
+startCommand:
+  type: http
+  url: https://api.mcp.ai/p_gcp_billing
+
+auth:
+  type: oauth2
+  resourceMetadataUrl: https://api.mcp.ai/p_gcp_billing/.well-known/oauth-protected-resource
+  fallback:
+    type: agent-auth
+    description: >
+      Para clientes sem OAuth 2.1. O agente expõe uma tool authenticate(token).
+      Usuário gera o JWT em https://app.mcp.ai/agent-auth e cola no chat.

@@ -1,0 +1,17 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.mcp-dir/gcp_billing-mcp",
+  "title": "GCP Billing",
+  "description": "Google Cloud Billing BigQuery export reporting through a user-connected service account.",
+  "version": "0.1.0",
+  "repository": {
+    "url": "https://github.com/mcp-dir/gcp_billing-mcp",
+    "source": "github"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://api.mcp.ai/p_gcp_billing"
+    }
+  ]
+}
